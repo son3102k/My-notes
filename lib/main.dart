@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mynotes/constants/routes.dart';
@@ -58,6 +60,7 @@ class HomePage extends StatelessWidget {
     context.read<AuthBloc>().add(const AuthEventIntialize());
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
+        log(state.toString());
         if (state is AuthStateLoggedIn) {
           return const NotesView();
         } else if (state is AuthStateNeedsVerification) {
