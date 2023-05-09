@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:mynotes/helpers/loading/loading_screen_controller.dart';
 
 class LoadingScreen {
@@ -87,7 +86,7 @@ class LoadingScreen {
         );
       },
     );
-    state?.insert(overlay);
+    state.insert(overlay);
     return LoadingScreenController(
       close: () {
         _text.close();

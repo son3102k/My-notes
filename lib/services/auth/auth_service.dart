@@ -17,7 +17,6 @@ class AuthService implements AuthProvider {
       provider.createUser(email: email, password: password);
 
   @override
-  // TODO: implement currentUser
   AuthUser? get currentUser => provider.currentUser;
 
   @override
@@ -35,4 +34,8 @@ class AuthService implements AuthProvider {
 
   @override
   Future<void> initialize() => provider.initialize();
+
+  @override
+  Future<void> sendPasswordReset({required String toEmail}) =>
+      provider.sendPasswordReset(toEmail: toEmail);
 }
